@@ -47,7 +47,7 @@ public class RelojAlarmaCOD2 {
         }
     }
     /**
-     * Clase que se ejecuta en segundo plano para comprobar alarma.
+     * Clase que se ejecuta en segundo plano para comprobar que la alarma concuerda con la hora del reloj.
      */
     public class TicTac2 extends TimerTask {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
