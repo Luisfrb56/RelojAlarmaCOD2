@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package relojalarmacod2;
 
 import java.awt.Font;
 import javax.swing.JTextField;
+import static relojalarmacod2.Reloj.IncrementarunaHora;
 
 /**
- *Intento de interfaz para
+ *Intento de interfaz para reloj-alarma
  */
 public class Interfaz extends javax.swing.JFrame{
     static boolean alarma_reloj=true; //False=alarma  True=reloj
     /**
-     * Constructor de la interfaz, dónde se lanza la vetana y se establecen fuentes
+     * Constructor donde se lanza la interfaz y sus fuentes.
      */
     public Interfaz(){
         initComponents();
@@ -38,7 +35,6 @@ public class Interfaz extends javax.swing.JFrame{
         mas_minutos = new javax.swing.JButton();
         ver_alarma = new javax.swing.JButton();
         ver_reloj = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         indicador = new javax.swing.JTextField();
@@ -49,20 +45,53 @@ public class Interfaz extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PosponerButton.setText("Posponer Alarma");
+        PosponerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PosponerButtonActionPerformed(evt);
+            }
+        });
 
         alarma_off.setText("Apagar Alarma");
+        alarma_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alarma_offActionPerformed(evt);
+            }
+        });
 
         alarma_on.setText("Programar Alarma");
+        alarma_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alarma_onActionPerformed(evt);
+            }
+        });
 
         mas_horas.setText("+Horas");
+        mas_horas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mas_horasActionPerformed(evt);
+            }
+        });
 
         mas_minutos.setText("+Minutos");
+        mas_minutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mas_minutosActionPerformed(evt);
+            }
+        });
 
         ver_alarma.setText("jButton6");
+        ver_alarma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_alarmaActionPerformed(evt);
+            }
+        });
 
         ver_reloj.setText("jButton7");
-
-        jLabel1.setText("dfdfd");
+        ver_reloj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_relojActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Ver Alarma");
 
@@ -94,15 +123,12 @@ public class Interfaz extends javax.swing.JFrame{
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(alarma_off)
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel1))
+                            .addComponent(alarma_off)
                             .addComponent(mas_minutos)
                             .addComponent(mas_horas)
                             .addComponent(alarma_on)
                             .addComponent(PosponerButton))
-                        .addGap(76, 76, 76)
+                        .addGap(133, 133, 133)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
@@ -146,21 +172,15 @@ public class Interfaz extends javax.swing.JFrame{
                         .addGap(26, 26, 26)
                         .addComponent(PosponerButton))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(189, 189, 189))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(alarma_off)
-                        .addGap(27, 27, 27)
-                        .addComponent(alarma_on)
-                        .addGap(18, 18, 18)
-                        .addComponent(mas_horas)
-                        .addGap(18, 18, 18)
-                        .addComponent(mas_minutos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(alarma_off)
+                .addGap(27, 27, 27)
+                .addComponent(alarma_on)
+                .addGap(18, 18, 18)
+                .addComponent(mas_horas)
+                .addGap(18, 18, 18)
+                .addComponent(mas_minutos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ver_reloj)
                     .addComponent(jLabel3))
@@ -174,7 +194,7 @@ public class Interfaz extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * Botón que activa la alarma, establece a "True" el campo "Activada" de la clase Alarma.
+ * Boton que activa la alarma.
  * @param evt 
  */
     private void alarma_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_onActionPerformed
@@ -182,22 +202,21 @@ public class Interfaz extends javax.swing.JFrame{
         indicador.setText(Alarma.marca);
     }//GEN-LAST:event_alarma_onActionPerformed
 /**
- * Botón que pospone 2 minutos el tiempo de la alarma si esta está activada.
- *
+ * Boton para posponer la alarma 5 minutos.
  * @param evt 
  */
     private void PosponerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PosponerButtonActionPerformed
         if(Alarma.activa==true){
-        for(int i=0;i<2;i++)
+        for(int i=0;i<5;i++)
             Alarma.incrementarMinutos();
         }
     }//GEN-LAST:event_PosponerButtonActionPerformed
 /**
- * Incrementa la hora del reloj o la alarma, dependiendo cuál estea visible.
+ * Incrementa la hora del reloj o la alarma.
  * @param evt 
  */
     private void mas_horasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mas_horasActionPerformed
-        incrementarHoras();
+        IncrementarunaHora();
             
     }//GEN-LAST:event_mas_horasActionPerformed
 /**
@@ -220,17 +239,14 @@ public class Interfaz extends javax.swing.JFrame{
  * @param evt 
  */
     private void visualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visualizadorActionPerformed
-        
+        if(Alarma.activa==true){
+        for(int i=0;i<5;i++)
+            Alarma.incrementarMinutos();
+        }
     }//GEN-LAST:event_visualizadorActionPerformed
+
 /**
- * Clase del indicador de alarma.
- * @param evt 
- */
-    private void indicadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indicadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_indicadorActionPerformed
-/**
- * Botón para ver la hora del Reloj.
+ * Botón para ver el Reloj.
  * @param evt 
  */
     private void ver_relojActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_relojActionPerformed
@@ -249,6 +265,10 @@ public class Interfaz extends javax.swing.JFrame{
         if(Alarma.activa==false)
             alarma=new Alarma();
     }//GEN-LAST:event_ver_alarmaActionPerformed
+
+    private void alarma_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_offActionPerformed
+        Alarma.activa=false;
+    }//GEN-LAST:event_alarma_offActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,8 +341,7 @@ public class Interfaz extends javax.swing.JFrame{
     private static javax.swing.JButton PosponerButton;
     private static javax.swing.JButton alarma_off;
     private static javax.swing.JButton alarma_on;
-    private javax.swing.JTextField indicador;
-    private javax.swing.JLabel jLabel1;
+    private static javax.swing.JTextField indicador;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
