@@ -2,6 +2,8 @@
 package relojalarmacod2;
 
 import java.awt.Font;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import static relojalarmacod2.Reloj.IncrementarunaHora;
 
@@ -33,73 +35,90 @@ public class Interfaz extends javax.swing.JFrame{
         alarma_on = new javax.swing.JButton();
         mas_horas = new javax.swing.JButton();
         mas_minutos = new javax.swing.JButton();
-        ver_alarma = new javax.swing.JButton();
         ver_reloj = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         indicador = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        reloj_o_alarma = new javax.swing.JTextField();
+        ver_alarma = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         visualizador = new javax.swing.JTextField();
+        reloj_o_alarma = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PosponerButton.setBackground(new java.awt.Color(51, 51, 51));
+        PosponerButton.setForeground(new java.awt.Color(204, 102, 0));
         PosponerButton.setText("Posponer Alarma");
         PosponerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PosponerButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(PosponerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 26, -1, -1));
 
+        alarma_off.setBackground(new java.awt.Color(51, 51, 51));
+        alarma_off.setForeground(new java.awt.Color(204, 102, 0));
         alarma_off.setText("Apagar Alarma");
         alarma_off.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alarma_offActionPerformed(evt);
             }
         });
+        getContentPane().add(alarma_off, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 26, -1, -1));
 
+        alarma_on.setBackground(new java.awt.Color(51, 51, 51));
+        alarma_on.setForeground(new java.awt.Color(204, 102, 0));
         alarma_on.setText("Programar Alarma");
         alarma_on.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alarma_onActionPerformed(evt);
             }
         });
+        getContentPane().add(alarma_on, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 80, -1, -1));
 
+        mas_horas.setBackground(new java.awt.Color(51, 51, 51));
+        mas_horas.setForeground(new java.awt.Color(204, 102, 0));
         mas_horas.setText("+Horas");
         mas_horas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mas_horasActionPerformed(evt);
             }
         });
+        getContentPane().add(mas_horas, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 121, -1, -1));
 
+        mas_minutos.setBackground(new java.awt.Color(51, 51, 51));
+        mas_minutos.setForeground(new java.awt.Color(204, 102, 0));
         mas_minutos.setText("+Minutos");
         mas_minutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mas_minutosActionPerformed(evt);
             }
         });
+        getContentPane().add(mas_minutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 121, -1, -1));
 
-        ver_alarma.setText("A");
-        ver_alarma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ver_alarmaActionPerformed(evt);
-            }
-        });
-
+        ver_reloj.setBackground(new java.awt.Color(51, 51, 51));
+        ver_reloj.setForeground(new java.awt.Color(204, 102, 0));
         ver_reloj.setText("R");
         ver_reloj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ver_relojActionPerformed(evt);
             }
         });
+        getContentPane().add(ver_reloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 171, -1, -1));
 
         jLabel2.setText("Ver Alarma");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 175, -1, -1));
 
         jLabel3.setText("Ver Reloj");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 175, -1, -1));
 
-        indicador.setBackground(new java.awt.Color(0, 0, 0));
-        indicador.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 102, 0));
+
+        indicador.setBackground(new java.awt.Color(51, 51, 51));
+        indicador.setForeground(new java.awt.Color(204, 102, 0));
         indicador.setText("Indicador");
         indicador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,94 +126,63 @@ public class Interfaz extends javax.swing.JFrame{
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 57, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 62, Short.MAX_VALUE)
-        );
+        ver_alarma.setBackground(new java.awt.Color(51, 51, 51));
+        ver_alarma.setForeground(new java.awt.Color(204, 102, 0));
+        ver_alarma.setText("A");
+        ver_alarma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_alarmaActionPerformed(evt);
+            }
+        });
 
-        reloj_o_alarma.setBackground(new java.awt.Color(0, 0, 0));
-        reloj_o_alarma.setForeground(new java.awt.Color(255, 255, 255));
-        reloj_o_alarma.setText("jTextField1");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/relojalarmacod2/lotus-logo-55C6D49C4B-seeklogo.com.png"))); // NOI18N
 
-        visualizador.setBackground(new java.awt.Color(0, 0, 0));
-        visualizador.setForeground(new java.awt.Color(255, 255, 255));
+        visualizador.setBackground(new java.awt.Color(51, 51, 51));
+        visualizador.setForeground(new java.awt.Color(204, 102, 0));
         visualizador.setText("jTextField1");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(PosponerButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(alarma_off)
+        reloj_o_alarma.setBackground(new java.awt.Color(51, 51, 51));
+        reloj_o_alarma.setForeground(new java.awt.Color(204, 102, 0));
+        reloj_o_alarma.setText("jTextField1");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(ver_alarma)
+                        .addGap(49, 49, 49)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(indicador, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reloj_o_alarma, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                    .addComponent(visualizador))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(ver_alarma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(indicador, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(indicador, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(10, 10, 10)
-                                .addComponent(ver_reloj)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ver_alarma))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(mas_horas)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(mas_minutos))
-                            .addComponent(alarma_on))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(visualizador, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reloj_o_alarma, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PosponerButton)
-                            .addComponent(alarma_off)
-                            .addComponent(indicador, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(reloj_o_alarma, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(visualizador, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(alarma_on)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ver_alarma)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(ver_reloj))
-                                .addGap(159, 159, 159))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(mas_horas)
-                                .addComponent(mas_minutos)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(visualizador, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 2, 620, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,8 +224,7 @@ public class Interfaz extends javax.swing.JFrame{
  * @param evt 
  */
     private void alarma_ofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_ofActionPerformed
-        Alarma.activa=false;
-        indicador.setText(" ");
+
     }//GEN-LAST:event_alarma_ofActionPerformed
 /**
  * Clase del visualizador de hora.
@@ -273,6 +260,7 @@ public class Interfaz extends javax.swing.JFrame{
 
     private void alarma_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarma_offActionPerformed
         Alarma.activa=false;
+        indicador.setText(" ");
     }//GEN-LAST:event_alarma_offActionPerformed
 
     private void indicadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indicadorActionPerformed
@@ -345,6 +333,7 @@ public class Interfaz extends javax.swing.JFrame{
         else
             Alarma.incrementarMinutos();
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JButton PosponerButton;
@@ -353,7 +342,8 @@ public class Interfaz extends javax.swing.JFrame{
     private static javax.swing.JTextField indicador;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
     private static javax.swing.JButton mas_horas;
     private static javax.swing.JButton mas_minutos;
     private javax.swing.JTextField reloj_o_alarma;
